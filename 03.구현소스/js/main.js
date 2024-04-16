@@ -89,14 +89,19 @@ mFn.addEvt(banArea,"mousemove", (e) => {
   if (e.target === banArea || banArea.contains(e.target)) {
     mover.style.left = e.pageX + "px";
     mover.style.top = e.clientY + "px";
-    mover.style.display = "block"; // .mover 보이기
   } else {
     mover.style.display = "none"; // .mover 숨기기
   }
 });
-
-// myBody.addEventListener("click", () => {});
-//////////////////////  따라오기 ///////////////////////////
+mFn.addEvt(banArea,"mouseleave", (e) => {
+  // 마우스 이벤트가 banArea 내에서 발생한 경우에만 .mover 보이기
+    mover.style.display = "none"; // .mover 숨기기
+});
+mFn.addEvt(banArea,"mouseenter", (e) => {
+  // 마우스 이벤트가 banArea 내에서 발생한 경우에만 .mover 보이기
+    mover.style.display = "block"; // .mover 보이기
+});
+//////////////////////  click따라오기 ///////////////////////////
 
 //////////////////////////////coll 버튼클릭 슬라이드///////////////////////////////////////
 
